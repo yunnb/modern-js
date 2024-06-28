@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AND 연산자의 피연산자가 alert 라면?</title>
+</head>
+<body>
+<pre>
+아래 코드의 결과를 예측해 보세요.
+
+alert( alert(1) && alert(2) );
+-> alert 창에 1, undefined 출력
+=> alert 호출하면 undefined 반환
+   1. 왼쪽 피연산자 평가 -> 1 출력 -> 평가 멈춤
+      (1의 평가 결과는 undefined = falsy로 이 값을 출력하고 즉시 연산 멈춤)
+</pre>
+
+</body>
+</html>

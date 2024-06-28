@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"if"에 관한 고찰</title>
+</head>
+<body>
+<pre>
+아래 표현식에서 어떤 alert가 실행될까요?
+
+if(...) 안에 표현식이 있으면 어떤 일이 일어날까요?
+
+if (-1 || 0) alert( 'first' );          -> 출력 o
+if (-1 && 0) alert( 'second' );         -> 출력 x
+if (null || -1 && 1) alert( 'third' );  -> null || 1 -> 1이므로 출력 o
+</pre>
+</body>
+</html>
