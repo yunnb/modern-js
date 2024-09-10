@@ -1,23 +1,24 @@
 # 모던 JavaScript 튜토리얼
+[**Notion**](https://solar-net-4b4.notion.site/7ad3179a5a2e45bf8a65bb54ae668ca3?v=ab613d5af66347f3a3cdaa94ac0383a2&pvs=74)
 ### 자바스크립트 기본
-[2.1 Hello, world!](#21-hello-world)  
-[2.2 코드 구조 ](#22-코드-구조)  
+[2.1 Hello, world!](#https://solar-net-4b4.notion.site/2-1-Hello-world-33b1a298d38e48fbb6e8ae747a1b01fb)  
+[2.2 코드 구조 ](https://solar-net-4b4.notion.site/2-2-b3b96593db294e51a5761bbd6a95e6dc)  
 2.3 엄격 모드  
-[2.4 변수와 상수](#24-변수와-상수)    
-2.5 자료형  
-2.6 alert, prompt, confirm을 이용한 상호작용  
-2.7 형 변환  
-2.8 기본 연산자와 수학  
-2.9 비교 연산자  
-2.10 if와 '?'를 사용한 조건 처리  
-2.11 논리 연산자  
-2.12 nullish 병합 연산자 '??'  
-2.13 while과 for 반복문  
+[2.4 변수와 상수](https://solar-net-4b4.notion.site/2-4-cb931ab9b79547f19fc404e497312b4a)    
+[2.5 자료형](https://solar-net-4b4.notion.site/2-5-4fb0e2f065814b16aa0f2a3fe7a6209a)  
+[2.6 alert, prompt, confirm을 이용한 상호작용](https://solar-net-4b4.notion.site/2-6-alert-prompt-confirm-cf64d33656c6489384c3f50143b3bb4d)  
+[2.7 형 변환](https://solar-net-4b4.notion.site/2-7-78420fdad3834d83baf6f11a4f1b6a2e)  
+[2.8 기본 연산자와 수학](https://solar-net-4b4.notion.site/2-8-4d642ea102484df28cbfccf4e5f280ad)  
+[2.9 비교 연산자](https://solar-net-4b4.notion.site/2-9-51d9c582d4934a3aa4f67fb114fb1e05)  
+[2.10 if와 '?'를 사용한 조건 처리](https://solar-net-4b4.notion.site/2-10-if-111ab1368abd41108e61a803703fdbb5)  
+[2.11 논리 연산자](https://solar-net-4b4.notion.site/2-11-f83a17322e1f4d78a79178855828ae85)  
+[2.12 nullish 병합 연산자 '??'](https://solar-net-4b4.notion.site/2-12-nullish-eb5215ce56cc4967bb31fe83102a68fc)  
+[2.13 while과 for 반복문](https://solar-net-4b4.notion.site/2-13-while-for-54af2dac4b804559b5234da9578db1ac)  
 2.14 switch문  
-2.15 함수  
-2.16 함수 표현식  
-2.17 화살표 함수 기본  
-2.18 기본 문법 요약   
+[2.15 함수](https://solar-net-4b4.notion.site/2-15-e13420a6265f46e0abd3fb62a36b73ea)  
+[2.16 함수 표현식](https://solar-net-4b4.notion.site/2-16-90c882a2ff56410a984a92256a9bab0e)  
+[2.17 화살표 함수 기본](https://solar-net-4b4.notion.site/2-17-70ef457f85f64755846fa29cee0a9ae5)  
+2.18 기본 문법 요약
 
 ### 3. 코드 품질
 3.1 Chrome으로 디버깅하기  
@@ -27,228 +28,13 @@
 3.5 테스트 자동화와 Mocha  
 3.6 폴리필  
 
----
 
-## 2.1 Hello, world!
-## ‘script’ 태그
-
-`<script>` 태그를 이용하면 자바스크립트 프로그램을 HTML 문서 대부분의 위치에 삽입 가능
-
-```html
-<!DOCTYPE HTML>
-<html>
-<body>
-  <p>스크립트 전</p>
-  
-  <script>
-    alert( 'Hello, world!' );
-  </script>
-
-  <p>스크립트 후</p>
-</body>
-</html>
-```
-
-### 모던 마크업
-`<script>` 태그엔 몇 가지 속성 존재. 잘 사용 안함
-
-- type 속성: `<script type=”…”> `  
-→ 과거엔 타입 명시가 필수였음. but 이제는 자바스크립트 모듈에 사용 가능  
-- language 속성: `<script language=…>`   
-→ 현재 사용하고 있는 스크립트 언어 지정. 현재는 자바스크립트가 기본 언어로 사용할 필요 x  
-
-### 외부 스크립트
-파일 소분하여 저장 가능 
-
-```html
-<script src = ".../script.js"></script>
-```
-
-URL 전체를 속성으로 사용 가능 
-
----
-
-**HTML 안에 직접 스크립트를 작성하는 방식은 스크립트가 아주 간단할 때만 사용**
-
-스크립트를 별도의 파일에 작성하면 브라우저가 스크립트를 다운받아 캐시에 저장하기에 성능상 이점 존재   
-→ 여러 페이지에서 동일 스크립트 사용하는 경우, 브라우저는 스크립트 파일을 한번만 다운받아 사용   
-⇒ 트래픽 절약, 웹 페이지 실제 속도 빨라짐   
-
----
-
-**src 속성이 있으면 태그 내부의 코드는 무시됨**
-
-`<script>` 태그는 src 속성과 내부 코드를 동시에 가지지 못함  
-다음 코드는 실행되지 않음
-
-```html
-<script src="file.js">
-  alert(1); // src 속성이 사용되었으므로 이 코드는 무시됩니다.
-</script>
-```
-
-외부 파일을 연결할지 or 태그 내 코드 작성할지 선택해야 함
-
-```html
-<script src="file.js"></script>
-<script>
-  alert(1);
-</script>
-```
----
-## 2.2 코드 구조
-### 문
-statement 는 어떤 작업을 수행하는 문법 구조와 명령어를 의미함
-
-서로 다른 문은 세미콜론으로 구분함
-
-```jsx
-alert('Hello'); alert('World');
-
-// 코드 가독성을 위해 아래처럼 작성
-alert('Hello');
-alert('World');
-```
-
-### 세미콜론
-줄바꿈이 있다면 세미콜론 생략 가능
-```jsx
-alert('Hello')
-alert('World')
-```
-자바스크립트는 줄 바꿈을 ‘암시적’ 세미콜론으로 해석함 (=세미콜론 자동 삽입)
-
-**대부분의 경우, 줄바꿈은 세미콜론을 의미. but ‘대부분의 경우’가 ‘항상’은 아님**
-```jsx
-alert(3 +
-1
-+ 2);
-```
-위 코드는 세미콜론 자동 삽입이 일어나지 않아 6이 출력됨  
-
-**반면, 세미콜론이 정말 필요하지만 자바스크립트가 이를 추정하지 ‘못하는’ 상황도 존재함**
-
-```jsx
-[1, 2].forEach(alert) // 1과 2 출
-```
-위 코드 실행 시 1과 2 출력됨
-
-```jsx
-alert("에러가 발생합니다.")
-
-[1, 2].forEach(alert)
-```
-위 코드 실행 시 에러 발생
-
-```jsx
-alert("제대로 동작합니다.");
-
-[1, 2].forEach(alert)
-```
-위 코드 실행 시 3번의 출력문 정상 작동
-
-에러 발생 이유는 자바스크립트가 대괄호 [..] 앞에는 세미콜론이 있다고 가정하지 않기 때문  
-따라서 자바스크립트 엔진은 다음과 같이 판단하여 에러 발생
-```jsx
-alert("에러가 발생합니다.")[1, 2].forEach(alert)
-```
-줄바꿈을 했더라도 문 사이 세미콜론을 넣는 것이 좋음
-
-### 주석
-
-- 한 줄짜리 주석: //          `ctrl + /`
-- 여러 줄의 주석: /* */       `ctrl+shift+/`  
-
-중첩 주석은 지원하지 않음. /*…*/ 안에 또 다른 /*…*/ 존재 불가 → 에러 발생
-
----
-## 2.4 변수와 상수
-### 변수
-자바스크립트에선 `let` 키워드를 사용해 변수 생성  
-`var`과 `let` 은 거의 동일하게 동작. but `var` 은 ‘오래된’ 방식임
-변수를 두 번 선언 시 에러 발생
-
-### 변수 명명 규칙
-1. 변수명에는 오직 문자, 숫자, $, _  
-2. 첫 글자는 숫자가 될 수 없음  
-
-```jsx
-let userName;
-let test123;
-```
-카멜 표기법 - 처 단어를 제외한 각 단어의 첫 글자를 대문자로
-
-```jsx
-let $ = 1; // '$'라는 이름의 변수를 선언합니다.
-let _ = 2; // '_'라는 이름의 변수를 선언합니다.
-
-alert($ + _); // 3
-```
-$와 _는 일반 글자처럼 특별한 의미를 지니진 않음
-
-```jsx
-let 1a; // 변수명은 숫자로 시작해선 안 됩니다.
-let my-name; // 하이픈 '-'은 변수명에 올 수 없습니다.
-```
-위 코드는 잘못된 변수명 예시
-
-**예약어는 변수명으로 사용 불가**  
-이 단어들은 자바스크립트 내부에서 이미 사용 중이기 때문  
-예약어 예시: `let`, `class`, `return`, `function`
-
-### 상수
-변화하지 않는 변수 선언 시, `let` 대신 `const` 사용
-
-```jsx
-const myBirthday = "2003.01.09";
-```
-이렇게 `const`로 선언한 변수를 ‘상수(constant)’라고 부름  
-상수는 재할당할 수 없으므로 변경 시 에러 발생
-```jsx
-const myBirthday = '18.04.1982';
-myBirthday = '01.01.2001'; // error, can't reassign the constant!
-```
-
-**대문자 상수**  
-기억하기 힘든 값을 변수에 할당해 별칭으로 사용하는 것은 널리 사용되는 관습  
-이런 상수는 대문자와 밑줄로 구성된 이름으로 명명
-
-```jsx
-const COLOR_RED = "#F00";
-const COLOR_GREEN = "#0F0";
-const COLOR_BLUE = "#00F";
-const COLOR_ORANGE = "#FF7F00";
-
-// 색상을 고르고 싶을 때 별칭을 사용할 수 있게 되었습니다.
-let color = COLOR_ORANGE;
-alert(color); // #FF7F00
-```
-
-장점
-- `COLOR_ORANGE`는 `"#FF7F00"`보다 기억하기가 훨씬 쉽습니다.
-- `COLOR_ORANGE`를 사용하면 `"#FF7F00"`를 사용하는 것보다 오타를 낼 확률이 낮습니다.
-- `COLOR_ORANGE`가 `#FF7F00`보다 훨씬 유의미하므로, 코드 가독성이 증가합니다.
-
-언제 상수로? 언제 대문자로?
-
-```jsx
-const pageLoadTime = /* 웹페이지를 로드하는데 걸린 시간 */;
-```
-
-`pageLoadTime` 값은 페이지 로드 전에는 정해지지 않으므로 일반적인 방식으로 변수명을 지음  
-but 값 최초 할당 이후 변경되지 않으므로 여전히 상수  
-즉, 대문자 상수는 ‘하드 코딩’한 값의 별칭 만들 때 사용
-
-### 바람직한 변수명
-변수명은 간결, 명확
-- `userName`이나 `shoppingCart`처럼 사람이 읽을 수 있는 이름 사용
-- 무엇을 하고 있는지 명확히 알고 있지 않을 경우 외에는 줄임말이나 `a`, `b`, `c`와 같은 짧은 이름 X  
-- 최대한 서술적이고 간결하게. `data`와 `value`는 나쁜 이름의 예시 → 아무것도 설명해주지 않음  
-  코드 문맥상 변수가 가리키는 데이터나 값이 아주 명확할 때에만 사용하기  
-- 자신만의 규칙이나 소속된 팀의 규칙을 따르기.    
-  만약 사이트 방문객을 'user’라고 부르기로 했다면, 이와 관련된 변수를  
-`currentVisitor`나 `newManInTown`이 아닌 `currentUser`나 `newUser`라는 이름으로 지어야 함
-
-변수를 재사용하면 변수 선언에 솓는 노력을 덜 순 있지만, 디버깅에 열 배 많은 시간을 쏟아야 함  
-변수 추가하는 것은 좋은 습관  
-변수를 다르게 선언하는 것은 코드 최적화에 도움이 될 수 있음
+### 4. 객체 기본 
+[4.1 객체](https://solar-net-4b4.notion.site/4-1-bfb29ec946e74c249922ac76db05b009)  
+[4.2 참조에 의한 객체 복사](https://solar-net-4b4.notion.site/4-2-73b3319bbe904005b57e8894e5b1474d)  
+[4.3 가비지 컬렉션]()  
+[4.4 메서드와 this]()  
+[4.5 new 연산자와 생성자 함수]()  
+[4.6 옵셔널 체이닝 '?.']()  
+[4.7 심볼형]()  
+[4.8 객체를 원시형으로 변환하기]()  
