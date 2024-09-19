@@ -32,4 +32,4 @@
 ### 4. 객체 기본 
 [4.1 객체](https://solar-net-4b4.notion.site/4-1-bfb29ec946e74c249922ac76db05b009)  
 [4.2 참조에 의한 객체 복사](https://solar-net-4b4.notion.site/4-2-73b3319bbe904005b57e8894e5b1474d)  
-  
+[4.3 가비지 컬렉션](https://solar-net-4b4.notion.site/4-3-07bc8f3ba6094fb4826674251e932b8f)
